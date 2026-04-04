@@ -4,64 +4,109 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55b09994-bd06-4835-9d8a-6732f7995d89" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/lib/api-client.ts" afterDir="false" />
+    <list default="true" id="55b09994-bd06-4835-9d8a-6732f7995d89" name="Changes" comment="Add Home-Show-Contact pages without integration">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/show/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/article/ArticleBody.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/article/ArticleHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/article/CommentsSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/article/RelatedArticles.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/article/ShareButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/article/Sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/auth/AuthFooter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/auth/LoginForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/contact/ContactForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/home/CategorySections.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/home/HeroSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/home/LatestSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/home/NewsletterSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/home/TrendingSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/shared/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/shared/Navbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/shared/NewsTicker.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "mouaz-ajaj"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mouaz-ajaj&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mouaz-ajaj/news-.git",
-    "accountId": "7cee704c-5b3b-446a-b58a-c298f7a6951b"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mouaz-ajaj/news-.git&quot;,
+    &quot;accountId&quot;: &quot;7cee704c-5b3b-446a-b58a-c298f7a6951b&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="3BcZXfXWf37x4POU34VsoteSBxR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/M3aZ/Documents/Project/news-front/lib",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\M3aZ\\Documents\\Project\\news-front\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/M3aZ/Documents/Project/news-front/lib&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\M3aZ\\Documents\\Project\\news-front\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\M3aZ\Documents\Project\news-front\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\M3aZ\Documents\Project\news-front\component\shared" />
       <recent name="C:\Users\M3aZ\Documents\Project\news-front" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -92,11 +137,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774790359770</updated>
-      <workItem from="1774790361102" duration="1105000" />
+      <workItem from="1774790361102" duration="2694000" />
+      <workItem from="1774802259099" duration="1416000" />
+      <workItem from="1774884283026" duration="1207000" />
+      <workItem from="1774959504628" duration="1519000" />
+      <workItem from="1775242116836" duration="2587000" />
+      <workItem from="1775260432483" duration="3327000" />
+      <workItem from="1775315118574" duration="5904000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1774791541016</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774791541016</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="Add Home-Show-Contact pages without integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Home-Show-Contact pages without integration" />
   </component>
 </project>
