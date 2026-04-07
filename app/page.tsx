@@ -5,6 +5,7 @@ import LatestSection from "@/component/home/LatestSection";
 import CategorySections from "@/component/home/CategorySections";
 import NewsletterSection from "@/component/home/NewsletterSection";
 import type { Metadata } from "next";
+import { getHomePosts } from "@/services/homeService";
 
 export const metadata: Metadata = {
   title: "The Grand Editorial — Curated World News",
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
     "Your premium source for world news, politics, science, business, and culture. Deeply reported, beautifully presented.",
 };
 
-export default function Home() {
+export default async function Home() {
+  const homePosts = await getHomePosts();
   return (
     <div className="min-h-screen bg-[#fbf9f7] text-[#1b1c1b] selection:bg-[#fe9567] selection:text-[#752d04]">
       <style>{`
@@ -38,7 +40,7 @@ export default function Home() {
 
       <main>
         {/* Hero: Featured Story + secondary cards */}
-        <HeroSection />
+        <HeroSection featuredPosts={homePosts.featuredPosts} />
 
         {/* Thin divider */}
         <div className="mx-auto max-w-screen-2xl px-6 lg:px-10">
@@ -46,14 +48,17 @@ export default function Home() {
         </div>
 
         {/* Most Viewed + Most Liked ranked lists */}
-        <TrendingSection />
+        <TrendingSection
+          mostViewed={homePosts.mostViewedPosts}
+          mostLiked={homePosts.mostLikedPosts}
+        />
 
         <div className="mx-auto max-w-screen-2xl px-6 lg:px-10">
           <div className="h-px bg-linear-to-r from-transparent via-[#e0bfbc]/50 to-transparent" />
         </div>
 
         {/* Latest News */}
-        <LatestSection />
+        <LatestSection latestPosts={homePosts.latestPosts} />
 
         {/* Newsletter Banner */}
         <NewsletterSection />
@@ -65,4 +70,3 @@ export default function Home() {
     </div>
   );
 }
-

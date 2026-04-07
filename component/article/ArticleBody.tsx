@@ -2,15 +2,14 @@ import React from "react";
 import { newsCategories } from "@/lib/data";
 import Image from "next/image";
 
-export default function ArticleBody() {
+export default function ArticleBody({description}:{description?:string}) {
   return (
     <>
       <div className="headline-font border-l-4 border-[#73000c] py-2 pl-8 text-3xl italic leading-relaxed text-[#59413f]">
-        This represents the single most significant shift in energy
-        infrastructure since the invention of the steam engine.
+        {description}
       </div>
 
-      <div className="space-y-8 text-xl leading-[1.8] text-[#1b1c1b]">
+      {/* <div className="space-y-8 text-xl leading-[1.8] text-[#1b1c1b]">
         <p className="body-font">
           <span className="headline-font float-left mr-3 mt-2 text-7xl italic text-[#73000c]">
             I
@@ -62,7 +61,7 @@ export default function ArticleBody() {
           chain resilience will become the next great geopolitical
           frontier as the world moves toward a green economy.
         </p>
-      </div>
+      </div> */}
 
       <div className="border-t border-[#e0bfbc]/30 pt-12">
         <h4 className="mb-6 text-xs uppercase tracking-[0.2em] text-[#59413f]">

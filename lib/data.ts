@@ -17,6 +17,13 @@ export const comments: Comment[] = [
   },
 ];
 
+export const IMAGES = [
+  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=600&auto=format&fit=crop",
+];
+
 export const relatedCards: RelatedCard[] = [
   {
     category: "Innovation",
@@ -48,6 +55,10 @@ export const newsCategories: NewsCategory[] = [
   { id: 7, name: "Sports", slug: "sports" },
   { id: 8, name: "Arts & Culture", slug: "arts-culture" },
 ];
+export const  FALLBACK_AUTHOR_IMAGE =
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=256&auto=format&fit=crop";
+export const FALLBACK_HERO_IMAGE =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuBrdyUjoIyKuAz3LN_u7bZk6ybpjoU9EDln1nucYACFHApsDjxqhE5U_fkDd-GeTw096Y4KBxLBMNBAm4fjagnsqvA_ZL_7zQk7ryPD40Ey6uqMIYWIS4h3YhsFVjDbygsXXB-leUYRN3vd1VaJYveWuXrsrupEHuKGKjhqlXewxHTiFAKxITBENUGijLzmv_GQviVpjSEcpV-70QXkxKgiTq5XvJknK6xHSxAJKzEfFGr2V_Fpdj9-sLXKM1QDvA9Ts-K4yZ6U_sc";
 
 const authors = [
   {
@@ -289,7 +300,7 @@ export const sidebarPosts: NewsPost[] = sidebarPostSeeds.map((post, index) => {
 });
 
 export const headlines: string[] = [
-  "Market Trends: Global Luxury Real Estate Hits Record Highs in Q4",
-  "Art & Culture: The Grand Editorial's Winter Gala Invitations Issued",
-  "Technology: AI Integration in High-End Curated News Delivery",
+  "Market Trends: Global Luxury Real Estate Hits Record Highs in Q4 The Grand Editorial's WinterThe Grand Editorial's Winter",
+  "Art & Culture: The Grand Editorial's Winter Gala Invitations Issued AI Integration in High-End CurateAI Integration in High-End Curate",
+  "Technology: AI Integration in High-End Curated News Delivery Winter Gala Invitations IssuedWinter Gala Invitations Issued",
 ];

@@ -1,8 +1,8 @@
 import React from "react";
-import { comments } from "@/lib/data";
 import Image from "next/image";
-
-export default function CommentsSection() {
+import { Comments,Comment } from "@/types/post";
+import { FALLBACK_AUTHOR_IMAGE } from "@/lib/data";
+export default function CommentsSection({comments}:{comments: Comments}) {
   return (
     <section className="mt-20 border-t-2 border-[#73000c]/10 pt-20">
       <div className="mb-12 flex items-end justify-between">
@@ -11,7 +11,7 @@ export default function CommentsSection() {
             Reflections
           </h3>
           <p className="text-sm text-[#59413f]">
-            42 Comments on this Editorial
+            {comments.comments_count} Comments
           </p>
         </div>
 
@@ -21,12 +21,12 @@ export default function CommentsSection() {
       </div>
 
       <div className="space-y-12">
-        {comments.map((comment) => (
-          <div key={comment.name} className="flex items-start gap-6">
+        {comments.comments.map((comment:Comment) => (
+          <div key={comment.id} className="flex items-start gap-6">
             <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full bg-[#dbdad8]">
               <Image
-                src={comment.image}
-                alt={comment.name}
+                src={comment.user.image || FALLBACK_AUTHOR_IMAGE}
+                alt={`${comment.user.first_name} ${comment.user.last_name}`}
                 fill
                 className="object-cover"
               />
@@ -35,14 +35,14 @@ export default function CommentsSection() {
             <div className="flex-1 rounded-xl bg-[#f5f3f1] p-8">
               <div className="mb-4 flex justify-between">
                 <h5 className="headline-font text-lg">
-                  {comment.name}
+                  {comment.user.first_name} {comment.user.last_name}
                 </h5>
                 <span className="text-xs uppercase tracking-widest text-[#59413f]">
-                  {comment.time}
+                  {comment.created_at}
                 </span>
               </div>
               <p className="leading-relaxed text-[#59413f]">
-                {comment.text}
+                {comment.comment}
               </p>
             </div>
           </div>

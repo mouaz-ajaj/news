@@ -5,34 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55b09994-bd06-4835-9d8a-6732f7995d89" name="Changes" comment="Add Home-Show-Contact pages without integration">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/show/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/article/ArticleBody.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/article/ArticleHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/article/CommentsSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/article/RelatedArticles.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/article/ShareButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/article/Sidebar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/auth/AuthFooter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/auth/LoginForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/contact/ContactForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/home/CategorySections.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/home/HeroSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/home/LatestSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/home/NewsletterSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/home/TrendingSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/shared/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/shared/Navbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/shared/NewsTicker.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/singlePostService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/show/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/show/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/auth/AuthFooter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/auth/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/auth/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/shared/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/shared/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/shared/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/shared/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/shared/NewsTicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/shared/NewsTicker.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api-client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -143,7 +130,10 @@
       <workItem from="1774959504628" duration="1519000" />
       <workItem from="1775242116836" duration="2587000" />
       <workItem from="1775260432483" duration="3327000" />
-      <workItem from="1775315118574" duration="5904000" />
+      <workItem from="1775315118574" duration="7768000" />
+      <workItem from="1775347234465" duration="1175000" />
+      <workItem from="1775353307706" duration="3344000" />
+      <workItem from="1775477801442" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -153,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774791541016</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Home-Show-Contact pages without integration">
+      <option name="closed" value="true" />
+      <created>1775321488727</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1775321488727</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

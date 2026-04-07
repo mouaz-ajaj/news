@@ -1,7 +1,5 @@
 import React from "react";
-import NewsTicker from "@/component/shared/NewsTicker";
 import LoginForm from "@/component/auth/LoginForm";
-import AuthFooter from "@/component/auth/AuthFooter";
 import Image from "next/image";
 
 
@@ -30,8 +28,6 @@ export default function EditorialLoginPage() {
         `}
       </style>
 
-      <NewsTicker />
-
       <main className="relative flex flex-1 items-center justify-center overflow-hidden p-6 sm:p-12">
         <div className="absolute inset-0 z-0">
           <div className="editorial-gradient absolute inset-0 opacity-10" />
@@ -45,11 +41,12 @@ export default function EditorialLoginPage() {
 
           <div className="absolute inset-0 bg-gradient-to-t from-[#fbf9f7] via-transparent to-transparent" />
         </div>
+        <div className="relative w-full justify-items-center mt-16">
+          <LoginForm />
+        </div>
 
-        <LoginForm />
       </main>
 
-      <AuthFooter />
     </div>
   );
 }

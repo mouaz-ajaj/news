@@ -1,23 +1,20 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { sidebarPosts, newsCategories } from "@/lib/data";
-
+import { IMAGES } from "@/lib/data";
+import {  newsCategories } from "@/lib/data";
+import { Post } from "@/types/post";
 function getCategoryName(id: number) {
   return newsCategories.find((c) => c.id === id)?.name ?? "News";
 }
 
-const featuredPost = sidebarPosts.find((p) => p.is_featured === 1) ?? sidebarPosts[0];
-const secondaryPosts = sidebarPosts
-  .filter((p) => p.id !== featuredPost.id)
-  .slice(0, 3);
 
-const IMAGES = [
-  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=600&auto=format&fit=crop",
-];
+const todayDate = new Intl.DateTimeFormat("en", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+}).format(new Date());
+
 
 function formatDate(value: string) {
   return new Intl.DateTimeFormat("en", {
@@ -27,7 +24,9 @@ function formatDate(value: string) {
   }).format(new Date(value));
 }
 
-export default function HeroSection() {
+export default function HeroSection({featuredPosts}:{featuredPosts:Post[]}) {
+  const featuredPost = featuredPosts?.[0]||newsCategories[0];
+  const secondaryPosts = featuredPosts?.slice(1, 4);
   return (
     <section className="mx-auto max-w-screen-2xl px-6 lg:px-10 pt-32 pb-12">
       {/* Section Header */}
@@ -38,7 +37,7 @@ export default function HeroSection() {
         </span>
         <div className="flex-1 h-px bg-[#e0bfbc]/40" />
         <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#59413f]/60">
-          {formatDate(featuredPost.created_at)}
+          {todayDate}
         </span>
       </div>
 
@@ -47,7 +46,7 @@ export default function HeroSection() {
         <div className="lg:col-span-8 group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer">
           <div className="relative h-[520px] md:h-[600px] overflow-hidden">
             <Image
-              src={IMAGES[0]}
+              src={featuredPost.images?.[0]|| IMAGES[0]}
               alt={featuredPost.title}
               fill
               className="object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -58,11 +57,9 @@ export default function HeroSection() {
           <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
             <div className="flex items-center gap-3 mb-4">
               <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] bg-[#73000c] text-white">
-                {getCategoryName(featuredPost.category_id)}
+                Category
               </span>
-              <span className="text-white/60 text-[11px]">
-                {formatDate(featuredPost.created_at)}
-              </span>
+            
             </div>
 
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-white leading-tight mb-4 max-w-2xl group-hover:text-[#fe9567] transition-colors duration-300">
@@ -78,11 +75,11 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-4 text-white/60 text-[12px] font-semibold uppercase tracking-wider border-t border-white/10 pt-5">
               <span className="flex items-center gap-1.5">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                {featuredPost.views.toLocaleString()}
+                {featuredPost.views?.toLocaleString()}
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
-                {featuredPost.likes.toLocaleString()}
+                {featuredPost.likes?.toLocaleString()}
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"/></svg>
@@ -105,7 +102,7 @@ export default function HeroSection() {
 
         {/* Secondary Cards Column */}
         <div className="lg:col-span-4 flex flex-col gap-4">
-          {secondaryPosts.map((post, idx) => (
+          {secondaryPosts?.map((post, idx) => (
             <Link
               key={post.id}
               href="/show"
@@ -113,7 +110,7 @@ export default function HeroSection() {
             >
               <div className="relative w-24 h-24 shrink-0 overflow-hidden rounded-lg">
                 <Image
-                  src={IMAGES[(idx + 1) % IMAGES.length]}
+                  src={post.images?.[0]||IMAGES[(idx + 1) % IMAGES.length]}
                   alt={post.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -124,7 +121,7 @@ export default function HeroSection() {
               <div className="flex flex-col justify-between min-w-0">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#73000c]">
-                    {getCategoryName(post.category_id)}
+                    Category
                   </span>
                   <h3 className="font-serif text-[15px] font-bold text-[#1b1c1b] leading-snug mt-1 group-hover:text-[#73000c] transition-colors line-clamp-2">
                     {post.title}
@@ -137,7 +134,7 @@ export default function HeroSection() {
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-semibold text-[#59413f]/55 uppercase tracking-wider mt-2">
                   <span className="flex items-center gap-1">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                    {post.views.toLocaleString()}
+                    {post.views?.toLocaleString()}
                   </span>
                   <span className="flex items-center gap-1">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>

@@ -1,33 +1,22 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { sidebarPosts, newsCategories } from "@/lib/data";
-
-function getCategoryName(id: number) {
-  return newsCategories.find((c) => c.id === id)?.name ?? "News";
-}
-
-const mostViewed = [...sidebarPosts].sort((a, b) => b.views - a.views).slice(0, 5);
-const mostLiked = [...sidebarPosts].sort((a, b) => b.likes - a.likes).slice(0, 5);
-
-const CARD_IMAGES = [
-  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop",
-];
+import { IMAGES } from "@/lib/data";
+import { Post } from "@/types/post";
 
 function PostRankItem({
   post,
   rank,
 }: {
-  post: (typeof sidebarPosts)[0];
+  post: Post;
   rank: number;
 }) {
+  const imageSrc = post.images?.[0] || IMAGES[(rank - 1) % IMAGES.length];
+  const postHref = post.ulid ? `/show?ulid=${post.ulid}` : "/show";
+
   return (
     <Link
-      href="/show"
+      href={postHref}
       className="group flex items-center gap-4 py-4 border-b border-[#e0bfbc]/25 last:border-0 hover:bg-[#fbf9f7]/50 -mx-4 px-4 rounded-lg transition-colors duration-200"
     >
       <span className="font-serif text-4xl font-bold text-[#e0bfbc] group-hover:text-[#73000c]/30 transition-colors leading-none min-w-8 text-center">
@@ -35,7 +24,7 @@ function PostRankItem({
       </span>
       <div className="flex-1 min-w-0">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#73000c]">
-          {getCategoryName(post.category_id)}
+          {post.category?.name ?? "News"}
         </span>
         <h4 className="font-serif text-[15px] font-bold text-[#1b1c1b] leading-snug mt-0.5 group-hover:text-[#73000c] transition-colors line-clamp-1">
           {post.title}
@@ -64,7 +53,7 @@ function PostRankItem({
       </div>
       <div className="relative w-16 h-16 shrink-0 overflow-hidden rounded-lg">
         <Image
-          src={CARD_IMAGES[rank - 1]}
+          src={imageSrc}
           alt={post.title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -86,7 +75,7 @@ function SectionHeader({ label }: { label: string }) {
   );
 }
 
-export default function TrendingSection() {
+export default function TrendingSection({mostViewed, mostLiked}: {mostViewed: Post[], mostLiked: Post[]}) {
   return (
     <section className="mx-auto max-w-screen-2xl px-6 lg:px-10 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

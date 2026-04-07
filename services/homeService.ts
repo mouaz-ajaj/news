@@ -1,0 +1,23 @@
+
+import {HomePosts} from "@/types/post";
+
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+export const getHomePosts=async()=>{
+    const response = await fetch(`${BASE_URL}`,{
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization:process.env.NEXT_PUBLIC_API_TOKEN ? `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}` : "",
+        },
+        next: { revalidate: 600 },
+    });
+
+    //if any error happend 
+    if(!response.ok) {
+        throw new Error('problem') 
+    }
+    const json= await response.json();
+    const home=json as HomePosts
+    return home;
+}
