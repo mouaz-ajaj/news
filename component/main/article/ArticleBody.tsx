@@ -1,8 +1,7 @@
-import React from "react";
 import { newsCategories } from "@/lib/data";
-import Image from "next/image";
+import { Category } from "@/types/post";
 
-export default function ArticleBody({description}:{description?:string}) {
+export default function ArticleBody({description,categories}:{description:string,categories:Category[]} ) {
   return (
     <>
       <div className="headline-font border-l-4 border-[#73000c] py-2 pl-8 text-3xl italic leading-relaxed text-[#59413f]">
@@ -68,9 +67,9 @@ export default function ArticleBody({description}:{description?:string}) {
           Article Topics
         </h4>
         <div className="flex flex-wrap gap-3">
-          {newsCategories.map((topic) => (
+          {categories.map((topic) => (
             <a
-              key={topic.id}
+              key={topic.slug}
               href="#"
               className="rounded-md bg-[#efedec] px-4 py-2 text-xs uppercase tracking-widest text-[#1b1c1b] transition-colors hover:bg-[#eae8e6]"
             >

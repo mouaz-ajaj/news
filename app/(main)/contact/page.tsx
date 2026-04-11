@@ -1,5 +1,4 @@
-import React from "react";
-import ContactForm from "@/component/contact/ContactForm";
+import ContactForm from "@/component/main/contact/ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

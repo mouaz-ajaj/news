@@ -1,8 +1,8 @@
 import { FALLBACK_AUTHOR_IMAGE } from "@/lib/data";
-import ShareButton from "@/component/article/ShareButton";
+import ShareButton from "@/component/main/article/ShareButton";
 import Image from "next/image";
 import { PostHeader } from "@/types/post";
-import ArticleMediaCarousel from "@/component/article/ArticleMediaCarousel";
+import ArticleMediaCarousel from "@/component/main/article/ArticleMediaCarousel";
 
 export default function ArticleHeader({ header }: { header: PostHeader }) {
   const authorFirstName = header.author?.first_name ?? "Unknown";

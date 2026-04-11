@@ -4,21 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55b09994-bd06-4835-9d8a-6732f7995d89" name="Changes" comment="Add Home-Show-Contact pages without integration">
-      <change afterPath="$PROJECT_DIR$/services/singlePostService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="55b09994-bd06-4835-9d8a-6732f7995d89" name="Changes" comment="Home -Show Integration with backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/show/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/show/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/auth/AuthFooter.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/auth/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/auth/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/shared/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/shared/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/shared/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/shared/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/shared/NewsTicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/shared/NewsTicker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api-client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/contact/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/show/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/show/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/article/ArticleBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/article/ArticleBody.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/article/ArticleHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/article/ArticleHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/article/ArticleMediaCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/article/ArticleMediaCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/article/CommentsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/article/CommentsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/article/RelatedArticles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/article/RelatedArticles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/article/ShareButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/article/ShareButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/article/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/article/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/auth/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/auth/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/contact/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/contact/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/home/CategorySections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/home/CategorySections.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/home/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/home/HeroSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/home/LatestSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/home/LatestSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/home/NewsletterSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/home/NewsletterSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/home/TrendingSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/home/TrendingSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/shared/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/shared/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/shared/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/shared/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/shared/NewsTicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/main/shared/NewsTicker.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/post.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +96,11 @@
       <recent name="C:\Users\M3aZ\Documents\Project\news-front\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\M3aZ\Documents\Project\news-front\app" />
+      <recent name="C:\Users\M3aZ\Documents\Project\news-front\app\(main)" />
+      <recent name="C:\Users\M3aZ\Documents\Project\news-front\app\(main)\show\[id]" />
+      <recent name="C:\Users\M3aZ\Documents\Project\news-front\component\main" />
       <recent name="C:\Users\M3aZ\Documents\Project\news-front\component\shared" />
-      <recent name="C:\Users\M3aZ\Documents\Project\news-front" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -134,6 +147,10 @@
       <workItem from="1775347234465" duration="1175000" />
       <workItem from="1775353307706" duration="3344000" />
       <workItem from="1775477801442" duration="38000" />
+      <workItem from="1775523369653" duration="134000" />
+      <workItem from="1775572894714" duration="28000" />
+      <workItem from="1775581528747" duration="2948000" />
+      <workItem from="1775596355947" duration="112000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -151,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775321488727</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Home -Show Integration with backend">
+      <option name="closed" value="true" />
+      <created>1775523492741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1775523492741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +185,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Add Home-Show-Contact pages without integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Home-Show-Contact pages without integration" />
+    <MESSAGE value="Home -Show Integration with backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Home -Show Integration with backend" />
   </component>
 </project>

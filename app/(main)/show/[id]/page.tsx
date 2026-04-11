@@ -1,15 +1,33 @@
-import React from "react";
-import ArticleHeader from "@/component/article/ArticleHeader";
-import ArticleBody from "@/component/article/ArticleBody";
-import CommentsSection from "@/component/article/CommentsSection";
-import Sidebar from "@/component/article/Sidebar";
-import RelatedArticles from "@/component/article/RelatedArticles";
+import ArticleHeader from "@/component/main/article/ArticleHeader";
+import ArticleBody from "@/component/main/article/ArticleBody";
+import CommentsSection from "@/component/main/article/CommentsSection";
+import Sidebar from "@/component/main/article/Sidebar";
+import RelatedArticles from "@/component/main/article/RelatedArticles";
 import { getSinglePost } from "@/services/singlePostService";
 import { Comments, PostHeader } from "@/types/post";
-export default async function ArticlePage() {
-    const post = await getSinglePost({ ulid: "01KNHC5S5VW99SJEJFTG835J82" });
-    const header=post?.header as PostHeader
-    const comments=post?.comments as Comments 
+import { getCategories } from "@/services/categoryService";
+import { notFound } from "next/navigation";
+
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+
+  let post: Awaited<ReturnType<typeof getSinglePost>> | null = null;
+  try {
+    post = await getSinglePost({ ulid: id });
+  } catch {
+    notFound();
+  }
+  if (!post) {
+    notFound();
+  }
+
+  const header = post.header as PostHeader;
+  const comments = post.comments as Comments;
+  const categories = await getCategories();
   return (
     <div className="min-h-screen bg-[#fbf9f7] text-[#1b1c1b] selection:bg-[#fe9567] selection:text-[#752d04]">
       <style>
@@ -42,13 +60,12 @@ export default async function ArticlePage() {
         <ArticleHeader header={header} />
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-8 lg:grid-cols-12">
           <article className="space-y-10 lg:col-span-8">
-            <ArticleBody description={post?.description} />
+            <ArticleBody description={post?.description} categories={categories} />
             <CommentsSection comments={comments || []} />
           </article>
 
-          <Sidebar />
+          <Sidebar categories={categories} />
         </div>
-
         <RelatedArticles />
       </main>
     </div>

@@ -12,7 +12,7 @@ function PostRankItem({
   rank: number;
 }) {
   const imageSrc = post.images?.[0] || IMAGES[(rank - 1) % IMAGES.length];
-  const postHref = post.ulid ? `/show?ulid=${post.ulid}` : "/show";
+  const postHref = `/show/${post.ulid || post.id}`;
 
   return (
     <Link

@@ -22,6 +22,7 @@ export interface User{
 export interface Category{
     name:string;
     slug:string;
+    posts:Post[]
 }
 export interface Comments{
     comments:Comment[]
@@ -50,4 +51,6 @@ export interface Post{
     dislikes:number;
     comments_count:number;
     images:string[];
+    videos?:string[];
+    created_at?:string;
 }

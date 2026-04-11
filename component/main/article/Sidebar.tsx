@@ -1,7 +1,6 @@
 "use client";
-
 import { useState } from "react";
-import { newsCategories, sidebarPosts } from "@/lib/data";
+import { Category } from "@/types/post";
 
 function formatCompactDate(value: string) {
   return new Intl.DateTimeFormat("en", {
@@ -11,16 +10,14 @@ function formatCompactDate(value: string) {
   }).format(new Date(value));
 }
 
-export default function Sidebar() {
-  const [selectedCategoryId, setSelectedCategoryId] = useState(4);
+export default function Sidebar({categories}: {categories:Category[]}) {
+  const [selectedCategorySlug, setSelectedCategorySlug] = useState(categories[0].slug);
 
   const selectedCategory =
-    newsCategories.find((category) => category.id === selectedCategoryId) ??
-    newsCategories[0];
+    categories.find((category) => category.slug === selectedCategorySlug) ??
+    categories[0];
 
-  const posts = sidebarPosts
-    .filter((post) => post.category_id === selectedCategory.id)
-    .slice(0, 3);
+  const posts = selectedCategory.posts
 
   return (
     <aside className="space-y-10 lg:col-span-4 lg:self-start">
@@ -36,14 +33,14 @@ export default function Sidebar() {
         </div>
 
         <div className="mb-8 flex flex-wrap gap-2.5">
-          {newsCategories.map((category) => {
-            const isActive = category.id === selectedCategory.id;
+          {categories.map((category) => {
+            const isActive = category.slug === selectedCategory.slug;
 
             return (
               <button
-                key={category.id}
+                key={category.slug}
                 type="button"
-                onClick={() => setSelectedCategoryId(category.id)}
+                onClick={() => setSelectedCategorySlug(category.slug)}
                 className={`rounded-full border px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all duration-300 ${
                   isActive
                     ? "border-[#73000c] bg-[#73000c] text-white shadow-lg shadow-[#73000c]/20"
@@ -67,7 +64,7 @@ export default function Sidebar() {
                   {selectedCategory.name}
                 </span>
                 <span className="text-[11px] text-[#59413f]">
-                  {formatCompactDate(post.created_at)}
+                  {formatCompactDate(post.created_at||"2026-4-4")}
                 </span>
               </div>
 
@@ -83,11 +80,6 @@ export default function Sidebar() {
                 <span>{post.views} views</span>
                 <span>{post.likes} likes</span>
                 <span>{post.comments_count} comments</span>
-                {post.is_featured === 1 ? (
-                  <span className="rounded-full bg-[#73000c]/8 px-2.5 py-1 text-[#73000c]">
-                    Featured
-                  </span>
-                ) : null}
               </div>
 
               {index < posts.length - 1 ? (

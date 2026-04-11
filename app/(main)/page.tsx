@@ -1,11 +1,11 @@
-import React from "react";
-import HeroSection from "@/component/home/HeroSection";
-import TrendingSection from "@/component/home/TrendingSection";
-import LatestSection from "@/component/home/LatestSection";
-import CategorySections from "@/component/home/CategorySections";
-import NewsletterSection from "@/component/home/NewsletterSection";
+import HeroSection from "@/component/main/home/HeroSection";
+import TrendingSection from "@/component/main/home/TrendingSection";
+import LatestSection from "@/component/main/home/LatestSection";
+import CategorySections from "@/component/main/home/CategorySections";
+import NewsletterSection from "@/component/main/home/NewsletterSection";
 import type { Metadata } from "next";
 import { getHomePosts } from "@/services/homeService";
+import { getCategories } from "@/services/categoryService";
 
 export const metadata: Metadata = {
   title: "The Grand Editorial — Curated World News",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const homePosts = await getHomePosts();
+  const categories = await getCategories();
   return (
     <div className="min-h-screen bg-[#fbf9f7] text-[#1b1c1b] selection:bg-[#fe9567] selection:text-[#752d04]">
       <style>{`
@@ -64,7 +65,7 @@ export default async function Home() {
         <NewsletterSection />
 
         {/* Per-Category sections */}
-        <CategorySections />
+        <CategorySections categories={categories}/>
       </main>
 
     </div>

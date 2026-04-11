@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import NewsTicker from "@/component/shared/NewsTicker";
+import NewsTicker from "@/component/main/shared/NewsTicker";
 
 export default function Navbar() {
   const categories = [

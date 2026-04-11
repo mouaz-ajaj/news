@@ -27,6 +27,7 @@ function formatDate(value: string) {
 export default function HeroSection({featuredPosts}:{featuredPosts:Post[]}) {
   const featuredPost = featuredPosts?.[0]||newsCategories[0];
   const secondaryPosts = featuredPosts?.slice(1, 4);
+  const featuredHref = `/show/${featuredPost.ulid || featuredPost.id}`;
   return (
     <section className="mx-auto max-w-screen-2xl px-6 lg:px-10 pt-32 pb-12">
       {/* Section Header */}
@@ -90,7 +91,7 @@ export default function HeroSection({featuredPosts}:{featuredPosts:Post[]}) {
                 {featuredPost.comments_count}
               </span>
               <Link
-                href={`/show`}
+                href={featuredHref}
                 className="ml-auto flex items-center gap-2 px-4 py-2 rounded-sm bg-white/10 hover:bg-[#73000c] text-white text-[11px] uppercase tracking-widest transition-colors duration-300 border border-white/20"
               >
                 Read Story
@@ -105,7 +106,7 @@ export default function HeroSection({featuredPosts}:{featuredPosts:Post[]}) {
           {secondaryPosts?.map((post, idx) => (
             <Link
               key={post.id}
-              href="/show"
+              href={`/show/${post.ulid || post.id}`}
               className="group flex gap-4 rounded-xl border border-[#e0bfbc]/30 bg-white/60 hover:bg-white p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 flex-1"
             >
               <div className="relative w-24 h-24 shrink-0 overflow-hidden rounded-lg">
